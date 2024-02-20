@@ -3,6 +3,7 @@ package com.yizhi.student.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -29,7 +30,13 @@ public class StudentInfoServiceImpl implements StudentInfoService {
 
 	@Override
 	public List<StudentInfoDO> list(Map<String, Object> map){
-		return studentInfoDao.list(map);
+		Integer currPage = new Integer(map.get("currPage").toString());
+		Integer pageSize = new Integer(map.get("pageSize").toString());
+		Integer start = (currPage-1)*pageSize;
+		Map map1 = new HashMap();
+		map1.put("start", start);
+		map1.put("pageSize", pageSize);
+		return studentInfoDao.list(map1);
 	}
 
 	//"===================================================================================="

@@ -46,6 +46,8 @@ public class PageUtils implements Serializable {
 		this.totalPages = (int) Math.ceil((double) total / pageSize);
 	}
 
+
+
 	public int getTotal() {
 		return total;
 	}

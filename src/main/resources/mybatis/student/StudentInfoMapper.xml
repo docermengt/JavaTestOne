@@ -2,8 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.yizhi.student.dao.StudentInfoDao">
-	
-	
 
 
+    <select id="list" resultType="com.yizhi.student.domain.StudentInfoDO">
+        select *
+        from s_student_info limit #{start},#{pageSize} ;
+    </select>
 </mapper>

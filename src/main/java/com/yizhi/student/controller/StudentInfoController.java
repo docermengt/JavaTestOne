@@ -1,5 +1,6 @@
 package com.yizhi.student.controller;
 
+import java.security.Key;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -48,8 +49,9 @@ public class StudentInfoController {
 	@GetMapping("/list")
 	@RequiresPermissions("student:studentInfo:studentInfo")
 	public PageUtils list(@RequestParam Map<String, Object> params){
-
-		return null;
+		List<StudentInfoDO> list = studentInfoService.list(params);
+		PageUtils pageUtils = new PageUtils(list, list.size());
+		return pageUtils;
 
 	}
 
