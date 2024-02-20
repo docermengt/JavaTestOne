@@ -7,9 +7,9 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.38.130:3306/yizhi_db?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://127.0.0.1:3306/yizhi_db?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
     username: root
-    password: root
+    password: 541521
     initialSize: 1
     minIdle: 3
     maxActive: 20
@@ -37,9 +37,9 @@ spring:
     ehcache:
       config: classpath:config/ehcache.xml
   redis:
-    host: 192.168.38.130
+    host: 127.0.0.1
     port: 6379
-    password: html
+    #password: html
     # 连接超时时间（毫秒）
     timeout: 10000
     jedis:
